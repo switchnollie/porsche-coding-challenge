@@ -11,7 +11,9 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>Porsche Product Gallery</main>
+      <main>
+        <h1>Porsche Product Gallery</h1>
+      </main>
     </div>
   );
 }
