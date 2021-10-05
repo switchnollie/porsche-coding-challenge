@@ -32,14 +32,37 @@ const base = css`
 
   html {
     font-family: "Porsche Next", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    height: 100%;
   }
   body {
     background-color: ${palette.background};
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #__next {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
   }
 
   a,
   p {
     line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: uppercase;
   }
 `;
 

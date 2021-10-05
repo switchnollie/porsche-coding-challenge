@@ -6,7 +6,7 @@ describe("Home", () => {
     render(<Home products={[]} />);
 
     const heading = screen.getByRole("heading", {
-      name: /Porsche Product Gallery/i,
+      name: /Our Products/i,
     });
 
     expect(heading).toBeInTheDocument();

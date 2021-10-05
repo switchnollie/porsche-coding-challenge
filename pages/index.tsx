@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import FeaturedProducts from "~/sections/FeaturedProducts";
 import ProductOverview from "~/sections/ProductOverview";
 import httpService from "~/utils/httpService";
 import { Product } from "~/utils/types";
@@ -22,7 +23,7 @@ interface HomePageProps {
 
 export default function Home({ products }: HomePageProps) {
   return (
-    <div>
+    <>
       <Head>
         <title>Porsche Product Gallery</title>
         <meta
@@ -32,9 +33,9 @@ export default function Home({ products }: HomePageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Porsche Product Gallery</h1>
+        <FeaturedProducts products={products} />
         <ProductOverview products={products} />
       </main>
-    </div>
+    </>
   );
 }
