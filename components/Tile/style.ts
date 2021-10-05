@@ -19,7 +19,7 @@ export const TileContainer = styled.a<
     cursor: ${linked ? "pointer" : "auto"};
 
     &:hover {
-      transform: scale(1.03);
+      transform: scale(1.015);
       box-shadow: ${theme.shadows.el3};
     }
   `}
