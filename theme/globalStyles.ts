@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
+import palette from "./palette";
 import normalize from "styled-normalize";
 
 const base = css`
@@ -31,6 +32,9 @@ const base = css`
 
   html {
     font-family: "Porsche Next", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  }
+  body {
+    background-color: ${palette.background};
   }
 `;
 
