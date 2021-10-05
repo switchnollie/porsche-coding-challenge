@@ -41,5 +41,15 @@ export const SwiperContainer = styled.div`
     .swiper-pagination-bullet-active {
       background: ${theme.palette.accent};
     }
+
+    @media (max-width: 600px) {
+      .swiper-button-prev {
+        left: 1rem;
+      }
+
+      .swiper-button-next {
+        right: 1rem;
+      }
+    }
   `}
 `;
