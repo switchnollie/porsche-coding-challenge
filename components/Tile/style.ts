@@ -45,6 +45,8 @@ export const Title = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0.75em;
+  text-transform: uppercase;
+  font-weight: 600;
 `;
 
 export const TilesContainer = styled.div<{ varyingTileSizes: number }>`
