@@ -1,12 +1,17 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.section`
+export const InnerContainer = styled.section`
   ${({ theme }) => css`
     max-width: ${theme.dimensions.bodyMaxWidth};
-    margin: 6rem auto;
+    margin: 0 auto;
     box-sizing: border-box;
-    padding: 0 ${theme.dimensions.bodyPadding};
+    padding: 6rem ${theme.dimensions.bodyPadding};
   `}
+`;
+
+export const Container = styled.div`
+  background: ${(p) => p.theme.palette.background};
+  position: relative;
 `;
 
 export const Headline = styled.h1`
