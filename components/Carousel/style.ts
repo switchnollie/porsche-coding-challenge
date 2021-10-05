@@ -4,6 +4,7 @@ export const SwiperContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
     height: 75vh;
+    background-color: ${theme.palette.inverseBackground};
 
     .swiper {
       width: 100%;
@@ -29,7 +30,7 @@ export const SwiperContainer = styled.div`
       background-size: cover;
     }
 
-    .swiper-slide > * {
+    .swiper-slide > div {
       display: block;
       width: 100%;
     }
