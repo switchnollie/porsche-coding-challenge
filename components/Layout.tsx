@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Head from "next/head";
+import Footer from "~/components/Footer";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -25,6 +26,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       </Head>
       {children}
+      <Footer />
     </>
   );
 }

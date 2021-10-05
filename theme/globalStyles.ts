@@ -36,6 +36,11 @@ const base = css`
   body {
     background-color: ${palette.background};
   }
+
+  a,
+  p {
+    line-height: 1.5;
+  }
 `;
 
 export const GlobalStyles = createGlobalStyle`

@@ -11,16 +11,14 @@ export default function ProductOverview({ products }: ProductOverviewProps) {
     <Container>
       <Headline>Our Products</Headline>
       <TilesContainer varyingTileSizes={7}>
-        {products.map(({ title, id, featuredImageUrl }) => {
-          return (
-            <Tile
-              key={id}
-              title={title}
-              image={featuredImageUrl}
-              href={`/${id}`}
-            />
-          );
-        })}
+        {products.map(({ title, id, featuredImageUrl }) => (
+          <Tile
+            key={id}
+            title={title}
+            image={featuredImageUrl}
+            href={`/${id}`}
+          />
+        ))}
       </TilesContainer>
     </Container>
   );

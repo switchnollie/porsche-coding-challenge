@@ -7,8 +7,14 @@ declare module "styled-components" {
       bodyPadding: string;
     };
     palette: {
+      accent: string;
       background: string;
       cardBackground: string;
+      footer: {
+        background: string;
+        color: string;
+        divider: string;
+      };
     };
     shadows: {
       el1: string;
