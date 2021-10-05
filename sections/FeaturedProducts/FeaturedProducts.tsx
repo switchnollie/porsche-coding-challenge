@@ -1,7 +1,7 @@
 import Carousel, { CarouselSlide } from "~/components/Carousel";
 import Image from "next/image";
 import { Product } from "~/utils/types";
-import { Container } from "./style";
+import { Container, DetailsLinkButton } from "./style";
 
 interface FeaturedProductsProps {
   products: Product[];
@@ -13,9 +13,10 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
   return (
     <Container>
       <Carousel>
-        {featuredProducts.map(({ featuredImageUrl, title }) => (
+        {featuredProducts.map(({ featuredImageUrl, title, id }) => (
           <CarouselSlide key={featuredImageUrl}>
             <Image layout="fill" alt={title} src={featuredImageUrl} priority />
+            <DetailsLinkButton href={`/${id}`}>View Details</DetailsLinkButton>
           </CarouselSlide>
         ))}
       </Carousel>

@@ -9,6 +9,9 @@ declare module "styled-components" {
     palette: {
       accent: string;
       background: string;
+      onBackground: string;
+      onBackgroundInverse: string;
+      inverseBackground: string;
       cardBackground: string;
       footer: {
         background: string;
