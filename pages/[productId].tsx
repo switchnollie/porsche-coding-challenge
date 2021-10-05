@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
+import Hero from "~/components/Hero";
+import ProductDetails from "~/sections/ProductDetails";
 import httpService from "~/utils/httpService";
 import { Product } from "~/utils/types";
 
@@ -39,20 +40,20 @@ interface ProductDetailsPageProps {
 }
 
 export default function ProductDetailsPage({
-  product: { title, description },
+  product,
 }: ProductDetailsPageProps) {
+  const { title, description, featuredImageUrl } = product;
   return (
-    <div>
+    <>
       <Head>
         <title>Porsche Products · {title}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Link href="/">← Back</Link>
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <Hero src={featuredImageUrl} alt={title} />
+        <ProductDetails product={product} />
       </main>
-    </div>
+    </>
   );
 }
