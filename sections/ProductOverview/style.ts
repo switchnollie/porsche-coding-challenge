@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
+import { Tile } from "~/components/Tile";
 
 export const InnerContainer = styled.section`
   ${({ theme }) => css`
@@ -17,3 +19,24 @@ export const Container = styled.div`
 export const Headline = styled.h1`
   margin: 2em 0;
 `;
+
+export const AnimatedTile = styled(
+  motion(Tile, { forwardMotionProps: true })
+).attrs({
+  initial: false,
+  variants: {
+    inView: {
+      opacity: 1,
+      y: 0,
+    },
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+  },
+  transition: {
+    type: "tween",
+    duration: 1.3,
+    ease: "circOut",
+  },
+})``;

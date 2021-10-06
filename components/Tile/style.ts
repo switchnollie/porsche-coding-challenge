@@ -1,22 +1,31 @@
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 import { TileProps } from "./Tile";
 
-export const TileContainer = styled.a<
-  Pick<TileProps, "wide" | "tall"> & { linked?: boolean }
->`
-  ${({ wide, tall, linked, theme }) => css`
+export const TileContainer = styled.li<Pick<TileProps, "wide" | "tall">>`
+  ${({ wide, tall }) => css`
     display: flex;
-    background: ${theme.palette.cardBackground};
-    box-shadow: ${theme.shadows.el2};
-    flex-direction: column;
     grid-column: span ${tall ? 2 : 1};
     grid-row: span ${wide ? 2 : 1};
+    will-change: transform, opacity;
+  `}
+`;
+
+export const TileInnerContainer = styled.a`
+  ${({ theme }) => css`
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     border-radius: 0.5em;
+    will-change: transform;
+    box-shadow: ${theme.shadows.el2};
+    background: ${theme.palette.cardBackground};
     overflow: hidden;
+
     transition: transform 0.2s ${theme.easings.inOut},
       box-shadow 0.2s ${theme.easings.inOut};
-    will-change: transform;
-    cursor: ${linked ? "pointer" : "auto"};
 
     &:hover {
       transform: scale(1.015);
@@ -49,11 +58,25 @@ export const Title = styled.div`
   font-weight: 600;
 `;
 
-export const TilesContainer = styled.div<{ varyingTileSizes: number }>`
+interface TilesContainerProps {
+  varyingTileSizes: number;
+  inView: boolean;
+}
+
+export const TilesContainer = styled(motion.ul).attrs(
+  ({ inView }: TilesContainerProps) => ({
+    animate: inView ? "inView" : "hidden",
+    initial: false,
+    variants: {
+      inView: { transition: { staggerChildren: 0.08 } },
+    },
+  })
+)<TilesContainerProps>`
   ${({ varyingTileSizes }) => css`
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    list-style: none;
 
     & > *:nth-of-type(${varyingTileSizes}n + 1) {
       grid-row: span 2;
