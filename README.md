@@ -24,7 +24,3 @@ yarn && yarn dev
 ```
 yarn test
 ```
-
-###### Resources:
-
-- [Instructions Manual](https://gitlab.com/-/snippets/1811878)
