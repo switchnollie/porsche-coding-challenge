@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { forwardRef } from "react";
+import AspectRatioImage from "~/components/AspectRatioImage";
 import {
   TileContainer as Container,
-  Image,
   Title,
-  ImageContainer,
   TileInnerContainer as InnerContainer,
 } from "./style";
 
@@ -23,9 +22,11 @@ const Tile = forwardRef<HTMLLIElement, TileProps>(
         as={!!href ? "a" : "div"}
         data-testid="tileInnerContainer"
       >
-        <ImageContainer>
-          <Image src={image} alt={`Porsche product image for ${title}`} />
-        </ImageContainer>
+        <AspectRatioImage
+          src={image}
+          alt={`Porsche product image for ${title}`}
+          ratio={3 / 4}
+        />
         <Title>{title}</Title>
       </InnerContainer>
     );

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
+import NextImage from "next/image";
 import { TileProps } from "./Tile";
 
 export const TileContainer = styled.li<Pick<TileProps, "wide" | "tall">>`
@@ -32,21 +33,6 @@ export const TileInnerContainer = styled.a`
       box-shadow: ${theme.shadows.el3};
     }
   `}
-`;
-
-export const ImageContainer = styled.div`
-  flex: 1;
-  position: relative;
-  padding-top: 75%; // aspect ratio box, 3:4
-`;
-export const Image = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  overflow: hidden;
 `;
 
 export const Title = styled.footer`
