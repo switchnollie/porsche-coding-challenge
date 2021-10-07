@@ -8,7 +8,7 @@ interface ProductOverviewProps {
 }
 
 export default function ProductOverview({ products }: ProductOverviewProps) {
-  const { ref, inView } = useInView({ rootMargin: "-300px" });
+  const { ref, inView } = useInView({ threshold: 0.1 });
   return (
     <Container>
       <InnerContainer>
