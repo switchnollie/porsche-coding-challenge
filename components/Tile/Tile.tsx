@@ -19,7 +19,10 @@ export interface TileProps {
 const Tile = forwardRef<HTMLLIElement, TileProps>(
   ({ image, title, wide, tall, href, ...props }, ref) => {
     const innerJsx = (
-      <InnerContainer as={!!href ? "a" : "div"}>
+      <InnerContainer
+        as={!!href ? "a" : "div"}
+        data-testid="tileInnerContainer"
+      >
         <ImageContainer>
           <Image src={image} alt={`Porsche product image for ${title}`} />
         </ImageContainer>
