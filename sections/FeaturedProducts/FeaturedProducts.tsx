@@ -8,8 +8,11 @@ interface FeaturedProductsProps {
 }
 
 export default function FeaturedProducts({ products }: FeaturedProductsProps) {
-  // Show first 5 Products
-  const featuredProducts = products.slice(0, 5);
+  // Show 5 Products with contrasting colors
+  const featuredIndexes = [1, 4, 5, 6, 7];
+  const featuredProducts = products.filter(
+    (_, i) => featuredIndexes.indexOf(i) !== -1
+  );
   return (
     <Container>
       <Carousel>
