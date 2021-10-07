@@ -49,7 +49,7 @@ export const Image = styled.img`
   overflow: hidden;
 `;
 
-export const Title = styled.div`
+export const Title = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +77,7 @@ export const TilesContainer = styled(motion.ul).attrs(
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     list-style: none;
+    padding: 0;
 
     & > *:nth-of-type(${varyingTileSizes}n + 1) {
       grid-row: span 2;
